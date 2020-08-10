@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getMembers } from '../../Requests'
-import { Page, Sidebar, Content, Header } from './styles'
+import { Page, Content, Header } from './styles'
+import Sidebar from '../../components/Sidebar'
 
 export default function Profile(){
 
