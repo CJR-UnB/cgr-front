@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { getMembers } from '../../Requests'
 import { Page, Content, Header } from './styles'
 import Sidebar from '../../components/Sidebar'
+import Accordion from 'react-bootstrap/Accordion'
+import { Card } from 'react-bootstrap'
 
 export default function Profile(){
 
@@ -10,24 +12,27 @@ export default function Profile(){
     useEffect(() => {
         getMembers().then((res) => {
             setMembers(res.data)
-            console.log(res)
+            console.log(res.data)
         })
-    })
+    },[])
 
     return(
         <Page>
             <Sidebar/>
             <Content>
-                <Header>
-                    oi
-                    {members.name}
-                    <ul>
-                    {members.map((member) => (
-                        <li key={member.id}>{member.name}</li>
+                <Header/>
+                <Accordion>
+                {members.map((member) => (                    
+                    <Card key={member.id}>
+                        <Accordion.Toggle as={Card.Header} eventKey={member.id}>
+                        {member.name}
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey={member.id}>
+                        <Card.Body>Hello! I'm the body</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
                     ))}
-                    </ul>
-                </Header>
-                
+                </Accordion>
             </Content>
         </Page>
     )
