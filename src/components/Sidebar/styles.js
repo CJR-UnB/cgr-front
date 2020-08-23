@@ -3,16 +3,17 @@ import styled from 'styled-components'
 export const Container = styled.div `
     background-color: white;
     height: 100vh;
-    width: 10vw;
+    width: 20vw;
     position: fixed;
     padding: 5%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 
     img {
-        width: 100%;
+        width: 90%;
     }
 `
 export const Menu = styled.div `

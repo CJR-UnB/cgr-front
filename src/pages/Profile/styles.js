@@ -3,13 +3,14 @@ import styled from 'styled-components'
 export const Page = styled.div `
     display: flex;
     min-height: 100vh;
-    background-color: #eeeeee;
+    background-color: #F3F4F7;
 `
 export const Content = styled.div `
+    padding-left: 20vw;
     
 `
 export const Header = styled.div `
-    background-color: #1b97eb;
+    background-color: #369FFF;
     height: 30vh;
-    width: 100vw;
+    width: 80vw;
 `
