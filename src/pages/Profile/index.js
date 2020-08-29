@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getMembers, deleteMembers } from '../../Requests'
+import { getMembers } from '../../Requests'
 import { Page, Content } from './styles'
 import Sidebar from '../../components/Sidebar'
 import Accordion from 'react-bootstrap/Accordion'
