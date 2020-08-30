@@ -5,8 +5,8 @@ import Sidebar from '../../components/Sidebar'
 import Accordion from 'react-bootstrap/Accordion'
 import { Card } from 'react-bootstrap'
 import { FaRegTrashAlt } from "react-icons/fa";
-import { BsFillPlusCircleFill } from "react-icons/bs";
 import { useHistory } from 'react-router-dom'
+import AddButton from '../../components/AddButton'
 
 export default function MembersIndex(){
 
@@ -29,7 +29,7 @@ export default function MembersIndex(){
     //         alert('buuua')
     //     })
     // }
-
+    
     return(
         <Page>
             <Sidebar/>
@@ -50,7 +50,7 @@ export default function MembersIndex(){
                     </Card>
                     ))}
                 </Accordion>
-                <BsFillPlusCircleFill className={'icon'} onClick={() => history.push('/register/member')}/>
+                <AddButton/>
             </Content>
         </Page>
     )
