@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FaRegTrashAlt } from 'react-icons/fa'
 
 export const Page = styled.div `
     display: flex;
@@ -22,4 +23,7 @@ export const Content = styled.div `
         align-items: center;
         /* background-color: #DEDFE8; */
     }
+`
+export const DeleteIcon = styled(FaRegTrashAlt) `
+    cursor: pointer;
 `
