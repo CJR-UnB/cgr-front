@@ -8,7 +8,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { useHistory } from 'react-router-dom'
 
-export default function Profile(){
+export default function MembersIndex(){
 
     const [members, setMembers] = useState([])
 
