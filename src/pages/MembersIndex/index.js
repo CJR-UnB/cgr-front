@@ -4,15 +4,12 @@ import { Page, Content } from './styles'
 import Sidebar from '../../components/Sidebar'
 import Accordion from 'react-bootstrap/Accordion'
 import { Card } from 'react-bootstrap'
-import { FaRegTrashAlt } from "react-icons/fa";
-import { useHistory } from 'react-router-dom'
+import { FaRegTrashAlt } from 'react-icons/fa'
 import AddButton from '../../components/AddButton'
 
 export default function MembersIndex(){
 
     const [members, setMembers] = useState([])
-
-    let history = useHistory()
 
     useEffect(() => {
         getMembers().then((res) => {
@@ -44,7 +41,7 @@ export default function MembersIndex(){
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey={member.id}>
                             <Card.Body>Equipe(s): {member.teams.map((team) => (
-                                <p>{team.name}</p>
+                                <span>{team.name}</span>
                             ))}</Card.Body>
                         </Accordion.Collapse>
                     </Card>
