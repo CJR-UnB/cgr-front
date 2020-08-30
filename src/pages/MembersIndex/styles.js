@@ -22,12 +22,4 @@ export const Content = styled.div `
         align-items: center;
         /* background-color: #DEDFE8; */
     }
-    .icon{
-        color: #369FFF;
-        position: fixed;
-        font-size: 50px;
-        bottom: 5%;
-        right: 5%;
-        cursor: pointer;
-    }
 `
