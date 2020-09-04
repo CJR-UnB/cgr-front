@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { getMembers, deleteMember } from '../../Requests'
-import { Page, Content, DeleteIcon } from './styles'
+import { Page, Container, Content, Icons, DeleteIcon, EditIcon } from './styles'
 import Sidebar from '../../components/Sidebar'
 import Accordion from 'react-bootstrap/Accordion'
 import { Card, Button, Modal } from 'react-bootstrap'
 import AddButton from '../../components/AddButton'
+import NavButtons from '../../components/NavButtons'
 
 export default function MembersIndex(){
     
@@ -69,15 +70,22 @@ export default function MembersIndex(){
     return(
         <Page>
             <Sidebar/>
-            <Content>
+            <Container>
+
+                <NavButtons/>
+
+                <Content>
+                <h2>Membros</h2>
 
                 <Accordion className={'list'}>
                 {members.map((member) => (                    
                     <Card key={member.id}>
                         <Accordion.Toggle className={'cardHeader'} as={Card.Header} eventKey={member.id}>
                             {member.name}
-                            <DeleteIcon onClick={() => {setModalShow(true); setModalMember(member)}} 
-                            />
+                            <Icons>
+                                <EditIcon/>
+                                <DeleteIcon onClick={() => {setModalShow(true); setModalMember(member)}} />
+                            </Icons>
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey={member.id}>
                             <Card.Body>Equipe(s): {member.teams.map((team) => (
@@ -92,9 +100,10 @@ export default function MembersIndex(){
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                 />
+                </Content>
 
                 <AddButton/>
-            </Content>
+            </Container>
         </Page>
     )
 }
