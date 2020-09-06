@@ -9,7 +9,6 @@ export const Page = styled.div `
     color: #454555;
 `
 export const Container = styled.div `
-    margin-left: 20vw;
     width: 100vw;
     box-sizing: border-box;
     padding: 50px 5% 20px;
@@ -21,7 +20,6 @@ export const Container = styled.div `
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* background-color: white; */
     }
 `
 export const Content = styled.div `
