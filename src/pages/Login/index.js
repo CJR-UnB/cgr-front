@@ -19,7 +19,7 @@ export default function Login(){
 
                 <LinkBox>
                     <Link style={{color: 'grey'}}>Esqueceu a Senha?</Link>
-                    <Link style={{color: 'grey'}}>Cadastre-se</Link>
+                    <Link to={'./signup'} style={{color: 'grey'}}>Cadastre-se</Link>
                 </LinkBox>
             </LoginBox>
         </Page>
