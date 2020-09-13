@@ -1,13 +1,20 @@
 import styled from 'styled-components'
 
 export const Page = styled.div `
+    display: flex;
+    min-height: 100vh;
     background-color: #F3F4F7;
     color: #454555;
-    min-height: 100vh;
+`
+export const Container = styled.div `
+    width: 100vw;
     box-sizing: border-box;
-    padding: 5% 15%;
+    padding: 50px 5% 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 export const Content = styled.div `
-    width: 100%;
-    min-height: 100%;
+    width: 75%;
+    margin-top: 10vh;
 `

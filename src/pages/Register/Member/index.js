@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Page, Content } from './styles'
+import { Page, Container, Content } from './styles'
 import { postMembers, getMembers, getTeams, getTeam } from '../../../Requests'
 import ReturnButton from '../../../components/ReturnButton'
+import Sidebar from '../../../components/Sidebar'
+import Input from '../../../components/Input'
+import DefaultButton from '../../../components/DefaultButton'
 
 export default function RegisterMember(){
     const [newMember, setNewMember] = useState({
@@ -63,40 +66,46 @@ export default function RegisterMember(){
 
     return(
         <Page>
-            <Content>
-            <ReturnButton/>
-                <h2>Novo Membro</h2>
-                <form onSubmit={createMember}>
-                    <label>Nome:</label><br/>
-                    <input type="text" value={newMember.member.name} onChange={e => setNewMember({...newMember, member: {name:e.target.value}})}/><br/>
-                    
-                    <label>Equipe:</label><br/>
-                    <select onChange={e => handleTeam(e)}>
-                        <option value=''>Selecione uma Equipe</option>
-                        {teams.map((team) => (
-                            <option value={team.name} key={team.id} data-key={team.id} >{team.name}</option>
+            <Sidebar/>
+
+            <Container>
+
+                <ReturnButton/>
+
+                <Content>
+                    <h2>Novo Membro</h2>
+                    <form onSubmit={createMember}>
+                        <Input width={'50%'} label={'Nome:'} style={{background: 'white'}} value={newMember.member.name} onChange={e => setNewMember({...newMember, member: {name:e.target.value}})}/>
+                        
+                        <label>Equipe:</label><br/>
+                        <select onChange={e => handleTeam(e)}>
+                            <option value=''>Selecione uma Equipe</option>
+                            {teams.map((team) => (
+                                <option value={team.name} key={team.id} data-key={team.id} >{team.name}</option>
+                                ))}
+                        </select><br/>
+                        
+                        <label>Cargo:</label><br/>
+                        <select onChange={e => handleRole(e)}>
+                            <option value=''>Selecione um Cargo</option>
+                            {selectedTeam.roles.map((role) => (
+                                <option key={role.id} data-key={role.id} >{role.name}</option>
                             ))}
-                    </select><br/>
-                    
-                    <label>Cargo:</label><br/>
-                    <select onChange={e => handleRole(e)}>
-                        <option value=''>Selecione um Cargo</option>
-                        {selectedTeam.roles.map((role) => (
-                            <option key={role.id} data-key={role.id} >{role.name}</option>
-                        ))}
-                    </select><br/><br/>
-                    
-                    <input type="submit"/>
-                </form>
-                <div>
-                    {members.name}
-                    <ul>
-                    {members.map((member) => (
-                        <li key={member.id}>{member.name}</li>
-                        ))}
-                    </ul>
-                </div>
-            </Content>
+                        </select><br/><br/>
+                        
+                        <DefaultButton text={'Enviar'} type="submit"/>
+                    </form>
+                    <div>
+                        {members.name}
+                        <ul>
+                        {members.map((member) => (
+                            <li key={member.id}>{member.name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </Content>
+                
+            </Container>
         </Page>
     )
 }
