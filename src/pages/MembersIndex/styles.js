@@ -26,6 +26,9 @@ export const Content = styled.div `
     width: 75%;
     margin-top: 10vh;
 `
+export const Title = styled.h2 `
+    margin-bottom: 50px;
+`
 export const Icons = styled.div `
     width: 7%;
     min-width: 40px;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getMembers, deleteMember } from '../../Requests'
-import { Page, Container, Content, Icons, DeleteIcon, EditIcon } from './styles'
+import { Page, Container, Content, Title, Icons, DeleteIcon, EditIcon } from './styles'
 import Sidebar from '../../components/Sidebar'
 import Accordion from 'react-bootstrap/Accordion'
 import { Card, Button, Modal } from 'react-bootstrap'
@@ -72,10 +72,10 @@ export default function MembersIndex(){
             <Sidebar/>
             <Container>
 
-                <NavButtons/>
+                <NavButtons page="Membros"/>
 
                 <Content>
-                <h2>Membros</h2>
+                <Title>Membros</Title>
 
                 <Accordion className={'list'}>
                 {members.map((member) => (                    
