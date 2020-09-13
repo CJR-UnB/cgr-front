@@ -6,7 +6,7 @@ export const getMembers = () => api.get(`/members`);
 
 export const postMembers = (data) => api.post(`/members`, data);
 
-export const deleteMembers = (id) => api.delete(`/members/${id}`);
+export const deleteMember = (id) => api.delete(`/members/${id}/unhas`);
 
 export const getTeams = () => api.get('/teams');
 

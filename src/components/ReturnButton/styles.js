@@ -7,9 +7,8 @@ export const ButtonContainer = styled.div `
     display: flex;
     align-items: center;
 
-    position: absolute;
-    top: 5%;
-    left:5%;
+    position: relative;
+    left: -43%;
     cursor: pointer;
 `
 export const Icon = styled(FaChevronLeft) `
