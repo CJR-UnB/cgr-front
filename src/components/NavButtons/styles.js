@@ -9,4 +9,6 @@ export const TabsContainer = styled.div `
 export const Tab = styled.div `
     font-weight: 500;
     margin: 0 2%;
+    padding: 3px 0;
+    color: #454555;
 `
