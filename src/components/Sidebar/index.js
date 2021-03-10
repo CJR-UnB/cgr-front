@@ -21,7 +21,9 @@ export default function Sidebar(){
             <Container>
                 <img src={Logo} alt={'Logo CJR'} />
                 <Menu>
-                    <Item><Icon><FiUser/></Icon>Perfil</Item>
+                    <Link to={'/login'} style={{textDecoration: 'none', color: '#878D97'}}>
+                        <Item><Icon><FiUser/></Icon>Perfil</Item>
+                    </Link>
                     <Item><Icon><FiCalendar/></Icon>Eventos</Item>
                     <Item><Icon><FiBriefcase/></Icon>Reuniões</Item>
                     <Item><Icon><FiClock/></Icon>Horas</Item>
@@ -41,7 +43,9 @@ export default function Sidebar(){
             <Container style={{width: '4vw', padding: '5% 0px'}}>
                 <img src={Logo} alt={'Logo CJR'} />
                 <HiddenMenu>
-                    <HiddenItem><FiUser/></HiddenItem>
+                    <Link to={'/login'} style={{textDecoration: 'none', color: '#878D97'}}>
+                        <HiddenItem><FiUser/></HiddenItem>
+                    </Link>
                     <HiddenItem><FiCalendar/></HiddenItem>
                     <HiddenItem><FiBriefcase/></HiddenItem>
                     <HiddenItem><FiClock/></HiddenItem>
