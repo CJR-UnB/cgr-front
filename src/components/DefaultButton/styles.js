@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const ButtonContainer = styled.button `
+export const ButtonContainer = styled.button`
     color: white;
     background-color: #369FFF;
     box-sizing: border-box;
@@ -10,4 +10,4 @@ export const ButtonContainer = styled.button `
 
     display: flex;
     justify-content: center;
-`
+`;
