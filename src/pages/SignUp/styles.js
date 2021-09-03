@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Page = styled.div `
+export const Page = styled.div`
     background-color: #1b3393;
     color: #454555;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-`
-export const SignUpBox = styled.div `
+`;
+export const SignUpBox = styled.div`
     width: 370px;
     height: 530px;
     background-color: white;
@@ -25,13 +25,13 @@ export const SignUpBox = styled.div `
     img{
         width: 25%;
     }
-`
-export const Form = styled.div `
+`;
+export const Form = styled.div`
     width: 80%;
-`
-export const LinkBox = styled.div `
+`;
+export const LinkBox = styled.div`
     color: grey;
     display: flex;
     flex-direction: column;
     align-items: center;
-`
+`;

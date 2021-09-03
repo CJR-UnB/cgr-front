@@ -13,10 +13,10 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path='/' component={MembersIndex} exact />
-        <Route path='/register/member' component={RegisterMember}/>
-        <Route path='/login' component={Login}/>
-        <Route path='/signup' component={SignUp}/>
-        <Route path='/teams' component={TeamsIndex}/>
+        <Route path='/register/member' component={RegisterMember} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
+        <Route path='/teams' component={TeamsIndex} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Container = styled.div `
+export const Container = styled.div`
     height: auto;
     width: auto;
     
     position: absolute;
     bottom: 13%;
     right: 5%;
-`
-export const Option = styled.div `
+`;
+export const Option = styled.div`
     background-color: white;
     color: #454555;
     border-radius: 5px;
@@ -18,4 +18,4 @@ export const Option = styled.div `
     padding: 5px 8px;;
 
     cursor: pointer;
-`
+`;
