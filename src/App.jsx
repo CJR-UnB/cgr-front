@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MembersIndex from './pages/MembersIndex';
-import RegisterMember from './pages/Register/Member';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import TeamsIndex from './pages/TeamsIndex';
+
+import Login from 'pages/Login';
+import MembersIndex from 'pages/MembersIndex';
+import RegisterMember from 'pages/Register/Member';
+import SignUp from 'pages/SignUp';
+import TeamsIndex from 'pages/TeamsIndex';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   FiUser,
   FiCalendar,
@@ -7,6 +6,8 @@ import {
   FiClock,
   FiUsers,
 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+
 import Logo from '../../assets/CjrLogo.png';
 import {
   Container,

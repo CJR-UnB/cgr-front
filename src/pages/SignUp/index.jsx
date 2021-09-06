@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Page, SignUpBox, Form, LinkBox,
-} from './styles';
-import Logo from '../../assets/CjrLogo.png';
-import Input from '../../components/Input';
-import DefaultButton from '../../components/DefaultButton';
+
+import Logo from 'assets/CjrLogo.png';
+import DefaultButton from 'components/DefaultButton';
+import Input from 'components/Input';
+
+import { Page, SignUpBox, Form, LinkBox } from './styles';
 
 export default function SignUp() {
   return (
@@ -22,7 +22,9 @@ export default function SignUp() {
         <DefaultButton text='Enviar' />
 
         <LinkBox>
-          <Link to='./login' style={{ color: 'grey' }}>Já possui uma conta?</Link>
+          <Link to='./login' style={{ color: 'grey' }}>
+            Já possui uma conta?
+          </Link>
         </LinkBox>
       </SignUpBox>
     </Page>

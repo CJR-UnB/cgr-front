@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { FaChevronLeft } from 'react-icons/fa';
+import styled from 'styled-components';
 
 export const ButtonContainer = styled.div`
     color: #454555;

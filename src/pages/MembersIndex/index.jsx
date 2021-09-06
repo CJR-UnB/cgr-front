@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
 import { Card, Button, Modal } from 'react-bootstrap';
-import { getMembers, deleteMember } from '../../requests';
+import Accordion from 'react-bootstrap/Accordion';
+
+
+import AddButton from 'components/AddButton';
+import NavButtons from 'components/NavButtons';
+import Sidebar from 'components/Sidebar';
+import { getAllMembers, deleteMember } from 'services/requests';
+
 import {
   Page,
   Container,
@@ -11,9 +17,6 @@ import {
   DeleteIcon,
   EditIcon,
 } from './styles';
-import Sidebar from '../../components/Sidebar';
-import AddButton from '../../components/AddButton';
-import NavButtons from '../../components/NavButtons';
 
 export default function MembersIndex() {
   const [members, setMembers] = useState([]);
@@ -24,14 +27,14 @@ export default function MembersIndex() {
   });
 
   useEffect(() => {
-    getMembers().then((res) => {
+    getAllMembers().then((res) => {
       setMembers(res.data);
       console.log(res.data);
     });
   }, []);
 
   const fetchMembers = () => {
-    getMembers().then((res) => {
+    getAllMembers().then((res) => {
       setMembers(res.data);
     });
   };

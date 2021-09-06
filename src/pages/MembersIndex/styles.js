@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { GoPencil } from 'react-icons/go';
+import styled from 'styled-components';
 
 export const Page = styled.div`
     display: flex;

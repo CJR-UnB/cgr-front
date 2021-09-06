@@ -1,5 +1,6 @@
-import React, { InputHTMLAttributes, useState } from 'react';
 import uniqueId from 'lodash/uniqueId';
+import React, { InputHTMLAttributes, useState } from 'react';
+
 import { Container, Label, InputBox } from './styles';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
