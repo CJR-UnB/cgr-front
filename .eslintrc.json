@@ -1,16 +1,21 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es6": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:import/typescript"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "parser": "babel-eslint",
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
@@ -20,11 +25,28 @@
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
     "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
     "react/prop-types": "warn",
-    "import/prefer-default-export": "warn",
     "jsx-a11y/label-has-associated-control": "warn",
     "jsx-quotes": ["error", "prefer-single"],
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"]
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-console": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/extensions": 0
   }
 }
