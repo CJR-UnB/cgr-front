@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
+
+import DefaultButton from 'components/DefaultButton';
+import Input from 'components/Input';
+import ReturnButton from 'components/ReturnButton';
+import Sidebar from 'components/Sidebar';
+import {
+  createMember,
+  getAllMembers,
+  getAllTeams,
+  getTeam,
+} from 'services/requests';
+
 import { Page, Container, Content } from './styles';
-import { postMembers, getMembers, getTeams, getTeam } from '../../../requests';
-import ReturnButton from '../../../components/ReturnButton';
-import Sidebar from '../../../components/Sidebar';
-import Input from '../../../components/Input';
-import DefaultButton from '../../../components/DefaultButton';
 
 export default function RegisterMember() {
   const [newMember, setNewMember] = useState({
@@ -27,9 +34,9 @@ export default function RegisterMember() {
     ],
   });
 
-  function createMember(e) {
+  function handleCreateMember(e) {
     e.preventDefault();
-    postMembers(newMember)
+    createMember(newMember)
       .then((res) => {
         console.log(res);
         alert('Membro criado com sucesso');
@@ -57,14 +64,14 @@ export default function RegisterMember() {
   }
 
   useEffect(() => {
-    getMembers().then((res) => {
+    getAllMembers().then((res) => {
       setMembers(res.data);
       console.log(res);
     });
   }, []);
 
   useEffect(() => {
-    getTeams().then((res) => {
+    getAllTeams().then((res) => {
       setTeams(res.data);
       console.log(res);
     });
@@ -79,7 +86,7 @@ export default function RegisterMember() {
 
         <Content>
           <h2>Novo Membro</h2>
-          <form onSubmit={createMember}>
+          <form onSubmit={handleCreateMember}>
             <Input
               width='50%'
               label='Nome:'

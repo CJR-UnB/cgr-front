@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import Logo from 'assets/CjrLogo.png';
+import DefaultButton from 'components/DefaultButton';
+import Input from 'components/Input';
+
 import { Page, LoginBox, Form, LinkBox } from './styles';
-import Logo from '../../assets/CjrLogo.png';
-import Input from '../../components/Input';
-import DefaultButton from '../../components/DefaultButton';
 
 export default function Login() {
   return (

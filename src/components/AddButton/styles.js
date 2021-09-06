@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
+import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 20vh;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { Card, CardHeader, CardBody } from './styles';
 
 export default function TeamCard({ id, title, members }) {

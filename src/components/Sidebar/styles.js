@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import styled from 'styled-components';
 
 export const Container = styled.div`
     background-color: white;

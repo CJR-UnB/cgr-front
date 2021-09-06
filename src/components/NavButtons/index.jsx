@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { TabsContainer, Tab } from './styles';
 
 export default function NavButtons({ page }) {
