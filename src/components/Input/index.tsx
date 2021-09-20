@@ -3,12 +3,12 @@ import React, { InputHTMLAttributes, useState } from 'react';
 
 import { Container, Label, InputBox } from './styles';
 
-interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   width: string;
   label: string;
 }
 
-export default function Input({ width, label, ...rest }: IInputProps) {
+export default function Input({ width, label, ...rest }: InputProps) {
   const [id] = useState<string>(() => uniqueId('input-'));
 
   return (
