@@ -17,9 +17,3 @@ export const getTeam = (id: number) => api.get(`/teams/${id}`);
 
 /* LOGIN */
 export const postLogin = (data: { email: string; password: string; }) => api.post(`/authenticate`, data);
-
-export const loginUser = (email: string, password: string) =>
-    api.post('/authenticate/login', JSON.stringify({ email, password }));
-
-export const loginByToken = ( token: string ) =>
-    api.post('/authenticate/relogin', JSON.stringify({ token }));
