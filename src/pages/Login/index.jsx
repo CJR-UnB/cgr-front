@@ -1,11 +1,12 @@
-import { AuthContext } from 'context/authContext';
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 
 import Logo from 'assets/CjrLogo.png';
 import DefaultButton from 'components/DefaultButton';
 import Input from 'components/Input';
 import { postLogin } from 'services/requests';
+import storage from 'utils/storage';
 
 import { Page, LoginBox, Form } from './styles';
 
@@ -16,19 +17,20 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { signIn } = useContext(AuthContext);
-
   const handleSignIn = () => {
     const data = {
       "email": email,
       "password": password
     }
     postLogin(data)
-      .then(() => {
+      .then((res) => {
+        console.log(res.data);
+        storage.set("token", res.data.auth_token);
         history.push('/');
       })
       .catch(() => {
         console.log("Email ou senha incorretos");
+        storage.remove("token");
       })
   };
 
