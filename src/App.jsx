@@ -27,16 +27,16 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Routes = () => (
-  <BrowserRouter>
-    <StoreProvider>
-      <Switch>
-        <PrivateRoute path='/' component={MembersIndex} exact />
-        <PrivateRoute path='/register/member' component={RegisterMember} />
-        <PrivateRoute path='/teams' component={TeamsIndex} />
-        <Route path='/login' component={Login} />
-      </Switch>
-    </StoreProvider>
-  </BrowserRouter>
+  <StoreProvider>
+    <BrowserRouter> 
+        <Switch>
+          <PrivateRoute path='/' component={MembersIndex} exact />
+          <PrivateRoute path='/register/member' component={RegisterMember} />
+          <PrivateRoute path='/teams' component={TeamsIndex} />
+          <Route path='/login' component={Login} />
+        </Switch>
+    </BrowserRouter>
+  </StoreProvider>
 );
 
 export default Routes;
