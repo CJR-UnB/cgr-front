@@ -1,26 +1,42 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+/* eslint-disable react/prop-types */
+import StoreProvider from 'context/provider';
+import React, { useContext } from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Login from 'pages/Login';
 import MembersIndex from 'pages/MembersIndex';
 import RegisterMember from 'pages/Register/Member';
-import SignUp from 'pages/SignUp';
 import TeamsIndex from 'pages/TeamsIndex';
+
+import StoreContext from './context/Context'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  
+  const { token } = useContext(StoreContext);
+  
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/' component={MembersIndex} exact />
-        <Route path='/register/member' component={RegisterMember} />
-        <Route path='/login' component={Login} />
-        <Route path='/signup' component={SignUp} />
-        <Route path='/teams' component={TeamsIndex} />
-      </Switch>
-    </BrowserRouter>
-  );
+    <Route 
+      { ...rest} 
+      render= {() => token ?
+          <Component { ...rest } /> : <Redirect to={{ pathname: '/login'}} />
+      } />
+  )
 }
 
-export default App;
+const Routes = () => (
+  <StoreProvider>
+    <BrowserRouter> 
+        <Switch>
+          <PrivateRoute path='/' component={MembersIndex} exact />
+          <PrivateRoute path='/register/member' component={RegisterMember} />
+          <PrivateRoute path='/teams' component={TeamsIndex} />
+          <Route path='/login' component={Login} />
+        </Switch>
+    </BrowserRouter>
+  </StoreProvider>
+);
+
+export default Routes;
